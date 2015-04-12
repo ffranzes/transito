@@ -1,0 +1,27 @@
+require 'rails_helper'
+
+RSpec.describe "ocorrencias/edit", :type => :view do
+  before(:each) do
+    @ocorrencia = assign(:ocorrencia, Ocorrencia.create!(
+      :usuario => nil,
+      :evento => nil,
+      :latitude => "MyString",
+      :longitude => "MyString"
+    ))
+  end
+
+  it "renders the edit ocorrencia form" do
+    render
+
+    assert_select "form[action=?][method=?]", ocorrencia_path(@ocorrencia), "post" do
+
+      assert_select "input#ocorrencia_usuario_id[name=?]", "ocorrencia[usuario_id]"
+
+      assert_select "input#ocorrencia_evento_id[name=?]", "ocorrencia[evento_id]"
+
+      assert_select "input#ocorrencia_latitude[name=?]", "ocorrencia[latitude]"
+
+      assert_select "input#ocorrencia_longitude[name=?]", "ocorrencia[longitude]"
+    end
+  end
+end

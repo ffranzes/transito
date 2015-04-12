@@ -1,0 +1,47 @@
+# coding: utf-8
+require 'rails_helper'
+
+feature 'gerenciar Usuario' do
+
+  scenario 'incluir Usuario' do # , :js => true do
+    visit new_usuario_path
+    criar_e_verificar_usuario
+  end
+
+  scenario 'alterar Usuario' do #, :js => true do
+    usuario = FactoryGirl.create(:usuario)
+    visit edit_usuario_path(usuario)
+    atualizar_e_verificar_usuario
+  end
+
+  scenario 'excluir Usuario' do #, :javascript => true do
+    usuario = FactoryGirl.create(:usuario)
+    visit usuarios_path
+    click_link 'Excluir'
+  end
+
+  def criar_e_verificar_usuario
+    fill_in 'Nome', :with => "Luiz"
+    fill_in 'Email', :with => "eu@tu.com.br"
+    fill_in 'Sexo', :with => "Masculino"
+    click_button 'Create Usuario'
+    
+
+    expect(page).to have_content 'Nome: Luiz'
+    expect(page).to have_content 'Email: eu@tu.com.br'
+    expect(page).to have_content 'Sexo: Masculino'
+
+  end
+  def atualizar_e_verificar_usuario
+    fill_in 'Nome', :with => "Luiz"
+    fill_in 'Email', :with => "eu@tu.com.br"
+    fill_in 'Sexo', :with => "Masculino"
+    click_button 'Update Usuario'
+    
+
+    expect(page).to have_content 'Nome: Luiz'
+    expect(page).to have_content 'Email: eu@tu.com.br'
+    expect(page).to have_content 'Sexo: Masculino'
+
+  end
+end

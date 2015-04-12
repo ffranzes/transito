@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transito</title>
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" media="all" href="/assets/application.css" />
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple-touch-icon-144x144-precomposed.png" sizes="144x144" />
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple-touch-icon-114x114-precomposed.png" sizes="114x114" />
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple-touch-icon-72x72-precomposed.png" sizes="72x72" />
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="/images/apple-touch-icon-precomposed.png" />
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <script src="/assets/application.js"></script>
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Transito</a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/usuarios">Usuários</a></li>
+            <li><a href="/eventos">Eventos</a></li>
+            <li><a href="/ocorrencias">Ocorrências</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="alert fade in alert-success "><button class="close" data-dismiss="alert">&times;</button>Usuario was successfully updated.</div>
+          <div class="page-header">
+  <h1>Usuario</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd>Luiz2</dd>
+  <dt><strong>Email:</strong></dt>
+  <dd>tu@tu.com.br</dd>
+  <dt><strong>Sexo:</strong></dt>
+  <dd>Masculino</dd>
+  <dt><strong>Dtnascimento:</strong></dt>
+  <dd>2015-04-09</dd>
+</dl>
+
+<a class="btn btn-default" href="/usuarios">Back</a>
+<a class="btn btn-default" href="/usuarios/1/edit">Edit</a>
+<a data-confirm="Are you sure?" class="btn btn-danger" rel="nofollow" data-method="delete" href="/usuarios/1">Delete</a>
+
+        </div>
+        <div class="col-lg-3">
+          <div class="well sidebar-nav">
+            <h3>Sidebar</h3>
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li><a href="/usuarios">Usuários</a></li>
+              <li><a href="/eventos">Eventos</a></li>
+              <li><a href="/ocorrencias">Ocorrências</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Company 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

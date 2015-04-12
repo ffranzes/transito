@@ -1,0 +1,50 @@
+# coding: utf-8
+require 'rails_helper'
+
+feature 'gerenciar Ocorrencia' do
+
+  scenario 'incluir Ocorrencia' do # , :js => true do
+    visit new_ocorrencia_path
+    criar_e_verificar_ocorrencia
+  end
+
+  scenario 'alterar Ocorrencia' do #, :js => true do
+    usuario = FactoryGirl.create(:usuario, nome: 'Lalalal' ) # sacou SI>M
+    visit edit_ocorrencia_path(usuario)
+    atualizar_e_verificar_ocorrencia
+  end
+
+  scenario 'excluir Ocorrencia' do #, :javascript => true d
+    visit ocorrencia_path
+    click_link 'Delete'
+  end
+
+  def criar_e_verificar_ocorrencia
+    fill_in 'ocorrencia_latitude' , with: '25'
+    fill_in 'ocorrencia_longitude' , with: '50'
+    usuario = FactoryGirl.create(:usuario)
+    evento = FactoryGirl.create(:evento)
+    fill_in 'ocorrencia_usuario_id', :with => usuario.id
+    
+    
+    click_button 'Create Ocorrencia'
+
+    expect(page).to have_content 'Latitude: 25'
+    save_and_open_page
+
+  end
+  def atualizar_e_verificar_ocorrencia
+    fill_in 'usuario_nome', :with => "Luiz2"
+    fill_in 'usuario_email', :with => "tu@tu.com.br"
+    fill_in 'usuario_sexo', :with => "Masculino"
+    select '2015', from: 'usuario_dtnascimento_1i'
+    select 'April', from: 'usuario_dtnascimento_2i'
+    select '9', from: 'usuario_dtnascimento_3i'
+    click_button 'Update Usuario'
+    
+
+    expect(page).to have_content 'Nome: Luiz2'
+    expect(page).to have_content 'Email: tu@tu.com.br'
+    expect(page).to have_content 'Sexo: Masculino'
+  end
+end

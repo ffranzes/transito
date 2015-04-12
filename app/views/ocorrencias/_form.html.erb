@@ -1,0 +1,18 @@
+<%= simple_form_for @ocorrencia, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :usuario, label_method: :nome %>
+  <%= error_span(@ocorrencia[:usuario_id]) %>
+  <%= f.association :evento, label_method: :descricao %>
+  <%= error_span(@ocorrencia[:evento_id]) %>
+  <%= f.input :datainicio %>
+  <%= error_span(@ocorrencia[:datainicio]) %>
+  <%= f.input :datatermino %>
+  <%= error_span(@ocorrencia[:datatermino]) %>
+  <%= f.input :latitude %>
+  <%= error_span(@ocorrencia[:latitude]) %>
+  <%= f.input :longitude %>
+  <%= error_span(@ocorrencia[:longitude]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                ocorrencias_path, :class => 'btn btn-default' %>
+<% end %>
